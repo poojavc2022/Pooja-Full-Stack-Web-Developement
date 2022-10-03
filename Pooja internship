@@ -1,0 +1,184 @@
+CODE FOR HTML
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<link rel="stylesheet" href="../assets/css/cgpaCalculator.css" />
+<link rel="stylesheet" href="fontawesome/css/all.css" />
+<title>CGPA Calculator</title>
+</head>
+<body>
+<!-- cgpa_container html part -->
+<div class="cgpa_container">
+<!-- cgpa title html part -->
+<div class="cgpa_title"><h4>CGPA Calculator</h4></div>
+<!-- cgpa input html part -->
+<input type="text" id="first-gpa" placeholder="1st Sem">
+<input type="text" id="two-gpa" placeholder="2nd Sem">
+<input type="text" id="three-gpa" placeholder="3rd Sem">
+<input type="text" id="four-gpa" placeholder="4th Sem">
+<input type="text" id="five-gpa" placeholder="5th Sem">
+<input type="text" id="six-gpa" placeholder="6th Sem">
+<input type="text" id="seven-gpa" placeholder="7th Sem">
+<input type="text" id="eight-gpa" placeholder="8th Sem">
+<!-- cgpa output html part -->
+<div class="cgpa_output">
+<h1>Total CGPA =</h1>
+<button id="btn_re"> Reset
+</button>
+<button id="btn_sub"> Submit
+</button>
+</div>
+</div>
+<script src="../assets/js/cgpaCalculators.js"></script>
+</body>
+</html>
+
+CODE for CSS
+4.1.2CODE FOR CSS
+
+basic css */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5, h6
+{ margin: 0;
+padding: 0;
+}
+/* body css part */ body{
+
+
+display: flex;
+align-items: center; justify-content:center;
+background: url(../Images/cgpaCalculator.png); background-position: center;
+background-repeat: no-repeat; background-size: cover;
+}
+/* cgpa container css part */
+.cgpa_container{ width: 500px; height: auto;
+border-radius: 10px;
+box-shadow: inset 5px 5px 5px 0px rgba(255, 255, 255, 0.03),
+7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+/* cgpa container > cgpa_title css part */
+.cgpa_container
+> .cgpa_title{width: 100%; height: 50px;
+background-color: #2500fa; text-align: center;
+line-height: 50px;
+font-family: Bahnschrift SemiBold; font-size: 24px;
+color:rgb(211, 235, 127);
+border-radius: 10px 10px 0px 0px ;
+}
+/* cgpa_container > cgpa_input css part */
+.cgpa_container > input{border: none; background-color: #fff;
+
+
+width: 220px; height: 40px;
+border-radius: 10px; border: 1px solid #eee; text-align: center; font-family: tahoma; font-weight: bold; color:#242627; margin: 10px;
+}
+
+
+/* cgpa_container > cgpa_input placeholder css part */
+::placeholder{ c olor:#242627; font-size:15px;
+}
+
+
+/* cgpa_container cgpa_output css part*/
+.cgpa_container .cgpa_output{ width: 100%;
+margin-left: 19px;
+}
+/* cgpa_container cgpa_output h1 css part*/
+.cgpa_container .cgpa_output h1{font-family: arial;
+font-size: 25px; margin-top: 25px; color:#fff;
+}
+/* cgpa_container cgpa_output > btn_re css part*/
+/* cgpa_container cgpa_output > btn_sub css part*/
+.cgpa_container .cgpa_output #btn_re,
+.cgpa_container .cgpa_output #btn_sub
+
+
+background-color: #2500fa; outline: none;
+font-size: 20px;
+font-family: roboto slab; cursor: pointer;
+border-radius: 12px; margin: 25px 0px 25px 0px; color:#fff;
+box-shadow: inset 5px 5px 5px 0px rgba(255, 255, 255, 0.03), 7px 7px 20px 0px rgba(0, 0, 0, 0.2),
+4px 4px 5px 0px rgba(0, 0, 0, 0.1); padding: 5px 20px;
+}
+.cgpa_container .cgpa_output #btn_re{margin-right: 15px;
+}
+/* cgpa_container cgpa_output > btn_re:active css part*/
+/* cgpa_container cgpa_output > btn_sub:active css part*/
+
+
+.cgpa_container .cgpa_output #btn_re:active,
+.cgpa_container .cgpa_output #btn_sub:active{
+box-shadow: inset 5px 5px 5px 0px rgba(255, 255, 255, 0.03), inset 7px 7px 20px 0px rgba(0, 0, 0, 0.2),
+inset 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+CODE FOR JAVASCRIPT
+// onclick Event function call to get all input value. document.querySelector('#btn_sub').addEventListener('click',() =>{
+// first input value get
+let first_gpa=document.querySelector('#first-gpa').value;
+// first input value [5% per] calculation let first_gpa_per=(first_gpa /100)*5;
+
+
+// first input final value
+let first_gpa_per_result=first_gpa_per.toPrecision(3);
+// two input value get
+let two_gpa=document.querySelector("#two-gpa").value;
+// two input value [5% per] calculation let two_gpa_per=(two_gpa / 100) * 5;
+// two input final value
+let two_gpa_per_result=two_gpa_per.toPrecision(3);
+// three input value get
+let three_gpa=document.querySelector("#three-gpa").value;
+// three input value [5% per] calculation let three_gpa_per=(three_gpa / 100) * 5;
+// three input final value
+let three_gpa_per_result=three_gpa_per.toPrecision(3);
+// four input value get
+let four_gpa=document.querySelector("#four-gpa").value;
+// four input value [10% per] calculation let four_gpa_per=(four_gpa / 100) * 10;
+// four input final value
+let four_gpa_per_result=four_gpa_per.toPrecision(3);
+// five input value get
+let five_gpa=document.querySelector("#five-gpa").value;
+// five input value [15% per] calculation let five_gpa_per=(five_gpa / 100) * 15;
+// five input final value
+let five_gpa_per_result=five_gpa_per.toPrecision(3);
+// six input value get
+let six_gpa=document.querySelector("#six-gpa").value;
+// six input value [20% per] calculation let six_gpa_per=(six_gpa / 100) * 20;
+// six input final value
+let six_gpa_per_result=six_gpa_per.toPrecision(3);
+// seven input value get
+
+
+// seven input value [25% per] calculation letseven_gpa_per=(seven_gpa / 100) * 25;
+// seven input final value
+let seven_gpa_per_result=seven_gpa_per.toPrecision(3);
+// eight input value get
+let eight_gpa=document.querySelector("#eight-gpa").value;
+// eight input value [15% per] calculation let eight_gpa_per=(eight_gpa / 100) * 15;
+// eight input final value
+let eight_gpa_per_result=eight_gpa_per.toPrecision(3);
+// total final value sum let total =
+parseFloat(first_gpa_per_result)+ parseFloat(two_gpa_per_result)+ parseFloat(three_gpa_per_result)+ parseFloat(four_gpa_per_result)+ parseFloat(five_gpa_per_result)+ parseFloat(six_gpa_per_result)+ parseFloat(seven_gpa_per_result)+ parseFloat(eight_gpa_per_result); let total_cgpa=total.toPrecision(3);
+// total value show output
+document.querySelector('.cgpa_output h1').innerHTML=`TOTAL CGPA = ${total_cgpa}`
+})
+document.querySelector('#btn_re').addEventListener('click',()
+=>{ document.querySelector('.cgpa_output h1').innerHTML=`TOTAL CGPA =`document.querySelector('#first-gpa').value=''; document.querySelector('#two-gpa').value=''; document.querySelector('#three-gpa').value=''; document.querySelector('#four-gpa').value=''; document.querySelector('#five-gpa').value=''; document.querySelector('#six-gpa').value=''; document.querySelector('#seven-gpa').value='';
+
+
+})
+// onclick Event function call reset all input and output value
